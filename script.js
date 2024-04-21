@@ -6,11 +6,7 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-// Function to add a new book to the library
-function addBookToLibrary() {
-    // TODO
-}
-
+// Function to create and return a book info card
 function createBookCard() {
     let card = document.createElement('div');
     card.id = 'book-card';
@@ -19,7 +15,7 @@ function createBookCard() {
         <p>Author</p>
         <p>Pages</p>
         <p>Read</p>
-        <button>Remove</button>`;
+        <button class='remove'>Remove</button>`;
     return card;
 }
 
@@ -38,6 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// Event listener to remove a book card
+document.addEventListener('DOMContentLoaded', function() {
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove')) {
+            console.log(e.target.parentNode);
+            e.target.parentNode.remove();
+        }
+    });
+});
+
+
 // Accessing proper DOM elements for form management
 const dialog = document.querySelector('#add-dialog');
 const showButton = document.querySelector('#show-dialog');
@@ -50,3 +57,5 @@ showButton.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
     dialog.close();
 });
+
+
