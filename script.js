@@ -1,3 +1,4 @@
+// Constructor for the book class
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -5,32 +6,47 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-const myLibrary = [];
-
+// Function to add a new book to the library
 function addBookToLibrary() {
     // TODO
 }
 
-// Form handling
+function createBookCard() {
+    let card = document.createElement('div');
+    card.id = 'book-card';
+    card.innerHTML = 
+        `<p>Title</p>
+        <p>Author</p>
+        <p>Pages</p>
+        <p>Read</p>
+        <button>Remove</button>`;
+    return card;
+}
+
+// Form handling for submission
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('add-book');
 
+    // Submission button to add a new book
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const book = new Book(e.target.title.value, e.target.author.value, e.target.pages.value, e.target.read.checked);
         console.log(book);
+        document.body.appendChild(createBookCard());
     });
+
 });
 
+// Accessing proper DOM elements for form management
 const dialog = document.querySelector('#add-dialog');
 const showButton = document.querySelector('#show-dialog');
 const closeButton = document.querySelector('#close-dialog');
 
+// Functions to open and close the dialog box
 showButton.addEventListener('click', () => {
     dialog.showModal();
 });
-
 closeButton.addEventListener('click', () => {
     dialog.close();
 });
