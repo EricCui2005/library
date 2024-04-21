@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         const book = new Book(e.target.title.value, e.target.author.value, e.target.pages.value, e.target.read.checked);
-        document.body.appendChild(createBookCard(book));
+        let bookLibrary = document.getElementById('library');
+        bookLibrary.appendChild(createBookCard(book));
     });
 
 });

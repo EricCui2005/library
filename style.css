@@ -1,9 +1,18 @@
-* {
+/* * {
     border: solid black 1px;
-}
+} */
 
 #book-card {
+    border: solid black 1px;
     height: 200px;
     width: 200px;
     text-align: center;
+}
+
+#library {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
 }
