@@ -7,14 +7,15 @@ function Book(title, author, pages, read) {
 }
 
 // Function to create and return a book info card
-function createBookCard() {
+function createBookCard(book) {
+    console.log(book);
     let card = document.createElement('div');
     card.id = 'book-card';
     card.innerHTML = 
-        `<p>Title</p>
-        <p>Author</p>
-        <p>Pages</p>
-        <p>Read</p>
+        `<p>Title: ${book.title}</p>
+        <p>Author: ${book.author}</p>
+        <p>Pages ${book.pages}</p>
+        <p>Read ${book.read}</p>
         <button class='remove'>Remove</button>`;
     return card;
 }
@@ -28,8 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         const book = new Book(e.target.title.value, e.target.author.value, e.target.pages.value, e.target.read.checked);
-        console.log(book);
-        document.body.appendChild(createBookCard());
+        document.body.appendChild(createBookCard(book));
     });
 
 });
