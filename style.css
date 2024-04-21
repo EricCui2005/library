@@ -2,6 +2,9 @@
     border: solid black 1px;
 } */
 
+body {
+    text-align: center;;
+}
 #book-card {
     border: solid black 1px;
     height: 200px;
@@ -10,6 +13,7 @@
 }
 
 #library {
+    border: solid black 1px;
     height: 300px;
     display: flex;
     justify-content: center;
