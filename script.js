@@ -14,8 +14,8 @@ function createBookCard(book) {
     card.innerHTML = 
         `<p>Title: ${book.title}</p>
         <p>Author: ${book.author}</p>
-        <p>Pages ${book.pages}</p>
-        <p>Read ${book.read}</p>
+        <p>Pages: ${book.pages}</p>
+        <p>Read: ${book.read}</p>
         <button class='remove'>Remove</button>`;
     return card;
 }
